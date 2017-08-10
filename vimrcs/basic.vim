@@ -38,7 +38,7 @@
 "    -> Helper functions
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+set nu
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -153,7 +153,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme pablo 
 catch
 endtry
 
@@ -425,6 +425,7 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+
 
 " Make VIM remember position in file after reopen
 " if has("autocmd")
