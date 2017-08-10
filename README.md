@@ -1,3 +1,13 @@
+# Notes
+This is the modified version of vim configurations from https://github.com/amix/vimrc.git. 
+
+# Changes
+
+
+
+
+
+
 # The Ultimate vimrc
 
 Over the last 8 years I have used and tweaked Vim. This is my Ultimate vimrc.
