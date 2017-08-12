@@ -15,6 +15,7 @@ git clone https://github.com/vim/vim
 git pull && git fetch
 cd vim/src
 make distclean # if vim was prev installed
+# --prefix 用来设置将相关文件放置于installer_dir下
 ./configure --prefix=installer_dir \
             --with-features=huge \
             --enable-rubyinterp \
@@ -31,7 +32,7 @@ make distclean # if vim was prev installed
             --enable-cscope
 	    
 make
-# in LinuxMint --prefix doesnot work somehow. 
+# DESTDIR用来设置，将相关安装文件放置于DESTDIR/usr/local下
 make install DESTDIR=installer_dir
 
 # setup the alias, PATH, and Vim environment $VIM/$VIMRUNTIMEPATH
