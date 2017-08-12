@@ -5,7 +5,8 @@ sudo apt-get install liblua5.1-dev luajit libluajit-5.1 python-dev ruby-dev libp
 sudo rm -rf /usr/local/share/vim
 
 sudo rm /usr/bin/vim
- 
+
+# WARNING: notes the specific structure of lua folders. 
 sudo mkdir /usr/include/lua5.1/include
 sudo cp /usr/include/lua5.1/*.h /usr/include/lua5.1/include/
 
@@ -20,6 +21,7 @@ make distclean # if vim was prev installed
             --enable-largefile \
             --disable-netbeans \
             --enable-pythoninterp \
+	    # this path may be different depending on the installing history. 
             --with-python-config-dir=/usr/lib/python2.7/config \
             --enable-perlinterp \
             --enable-luainterp \
