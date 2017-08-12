@@ -28,6 +28,11 @@ make distclean # if vim was prev installed
             --with-lua-prefix=/usr/include/lua5.1 \
             --enable-cscope
 	    
-make & make install
+make
+# in LinuxMint --prefix doesnot work somehow. 
+make install DESTDIR=installer_dir
 
+# setup the alias, PATH, and Vim environment $VIM/$VIMRUNTIMEPATH
 # alias vi="vim" in .zshrc / .bashrc
+# export PATH=$PATH:vim_path
+# export VIM=$installer_dir/local/share/...
