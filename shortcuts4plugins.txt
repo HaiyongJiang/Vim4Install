@@ -1,0 +1,81 @@
+********************************************************************
+## NERDComComment
+https://github.com/scrooloose/nerdcommenter
+
+[count]<leader>cc |NERDComComment|
+Comment out the current line or text selected in visual mode.
+
+[count]<leader>c<space> |NERDComToggleComment|
+Toggles the comment state of the selected line(s). If the topmost selected line is commented, all selected lines are uncommented and vice versa.
+
+[count]<leader>cm |NERDComMinimalComment|
+Comments the given lines using only one set of multipart delimiters.
+
+[count]<leader>ci |NERDComInvertComment|
+Toggles the comment state of the selected line(s) individually.
+
+[count]<leader>cl
+[count]<leader>cb |NERDComAlignedComment|
+Same as |NERDComComment| except that the delimiters are aligned down the left side (<leader>cl) or both sides (<leader>cb).
+
+[count]<leader>cu |NERDComUncommentLine|
+Uncomments the selected line(s).
+
+********************************************************************
+## Neocomplete
+inoremap <expr><C-g>     undo_completion
+inoremap <expr><C-l>     complete_common_string
+" <TAB>: toggle completion.
+inoremap <expr><TAB>  pumvisible()
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> smart_close_popup().
+
+********************************************************************
+" shortcut to open NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+
+********************************************************************
+" CtrlP.vim
+https://github.com/kien/ctrlp.vim 
+:CtrlP or :CtrlP [starting-directory] to invoke CtrlP in find file mode.
+:CtrlPBuffer or :CtrlPMRU to invoke CtrlP in find buffer or find MRU file mode.
+:CtrlPMixed to search in Files, Buffers and MRU files at the same time.
+
+Once CtrlP is open:
+ <F5> to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
+ <c-f> and <c-b> to cycle between modes.
+ <c-d> to switch to filename only search instead of full path.
+ <c-r> to switch to regexp mode.
+ <c-j>, <c-k> or the arrow keys to navigate the result list.
+ <c-t> or <c-v>, <c-x> to open the selected entry in a new tab or in a new split.
+ <c-y> to create a new file and its parent directories.
+
+
+********************************************************************
+" jedi-vim
+Completion <C-Space>
+Goto assignments <leader>g (typical goto function)
+Goto definitions <leader>d (follow identifier as far as possible, includes imports and statements)
+Show Documentation/Pydoc K (shows a popup with assignments)
+Renaming <leader>r
+Usages <leader>n (shows all the usages of a name)
+Open module, e.g. :Pyimport os (opens the os module)
+
+
+********************************************************************
+" syntastic 
+
+" open and close the location list
+:lclose and :lopen
+" jump between different items. 
+:lne[xt] and :lp[revious] are the correct shortcuts.
+:help 'syntastic_quiet_messages' 
+let g:synstatic_quiet_messages = {'regex': 'SC20148'}
+" ignore warnings. 
+" https://stackoverflow.com/questions/28206152/show-only-errors-with-pylint-and-syntastic-in-vim
+let g:syntastic_quiet_messages = {
+        \ "!level":  "errors",
+        \ "type":    "style",
+        \ "regex":   '.*',
+        \ "file:p":  '.*' }
