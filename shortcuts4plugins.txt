@@ -25,6 +25,10 @@ Uncomments the selected line(s).
 ## Neocomplete
 inoremap <expr><C-g>     undo_completion
 inoremap <expr><C-l>     complete_common_string
+# complete with the selected items.
+inoremap <expr><C-y>  close_popup()
+
+
 " <TAB>: toggle completion.
 inoremap <expr><TAB>  pumvisible()
 " <C-h>, <BS>: close popup and delete backword char.
