@@ -60,6 +60,7 @@ Once CtrlP is open:
 " jedi-vim
 Completion <C-Space>
 Goto assignments <leader>g (typical goto function)
+Go back to original editing <C-O>
 Goto definitions <leader>d (follow identifier as far as possible, includes imports and statements)
 Show Documentation/Pydoc K (shows a popup with assignments)
 Renaming <leader>r
