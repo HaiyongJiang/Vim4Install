@@ -1,4 +1,16 @@
 ********************************************************************
+## VimDiff
+]c               - advance to the next block with differences
+[c               - reverse search for the previous block with differences
+do (diff obtain) - bring changes from the other file to the current file
+dp (diff put)    - send changes from the current file to the other file
+zo               - unfold/unhide text
+zc               - refold/rehide text
+zr               - unfold both files completely
+zm               - fold both files completely
+:diffupdate will re-scan the files for changes.
+
+********************************************************************
 ## NERDComComment
 https://github.com/scrooloose/nerdcommenter
 
@@ -25,6 +37,10 @@ Uncomments the selected line(s).
 ## Neocomplete
 inoremap <expr><C-g>     undo_completion
 inoremap <expr><C-l>     complete_common_string
+# complete with the selected items.
+inoremap <expr><C-y>  close_popup()
+
+
 " <TAB>: toggle completion.
 inoremap <expr><TAB>  pumvisible()
 " <C-h>, <BS>: close popup and delete backword char.
@@ -56,6 +72,7 @@ Once CtrlP is open:
 " jedi-vim
 Completion <C-Space>
 Goto assignments <leader>g (typical goto function)
+Go back to original editing <C-O>
 Goto definitions <leader>d (follow identifier as far as possible, includes imports and statements)
 Show Documentation/Pydoc K (shows a popup with assignments)
 Renaming <leader>r
