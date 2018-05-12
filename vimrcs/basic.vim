@@ -152,11 +152,13 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    colorscheme pablo 
-catch
-endtry
-
+" ************************************************************
+" pablo colormode is badl
+" try
+"     colorscheme pablo
+" catch
+" endtry
+"
 set background=dark
 
 " Set extra options when running in GUI mode
