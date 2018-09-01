@@ -9,6 +9,7 @@ sudo rm /usr/bin/vim
 # WARNING: notes the specific structure of lua folders. 
 sudo mkdir /usr/include/lua5.1/include
 sudo cp /usr/include/lua5.1/*.h /usr/include/lua5.1/include/
+sudo ln -s /usr/lib/x86_64-linux-gnu/liblua5.1.so /usr/local/lib/liblua.so
 
 cd /opt/
 git clone https://github.com/vim/vim
@@ -16,19 +17,19 @@ git pull && git fetch
 cd vim/src
 make distclean # if vim was prev installed
 # --prefix 用来设置将相关文件放置于installer_dir下
-./configure --prefix=installer_dir \
+./configure --prefix=/usr/local/ \
             --with-features=huge \
-            --enable-rubyinterp \
             --enable-largefile \
             --disable-netbeans \
-            --enable-pythoninterp \
-	    # this path may be different depending on the installing history. 
-            --with-python-config-dir=/usr/lib/python2.7/config \
-            --enable-perlinterp \
+	    --enable-perlinterp \
             --enable-luainterp \
             --with-luajit \
+	    --with-lua-prefix=/usr/include/lua5.1 \
+            --enable-rubyinterp \
+	    --enable-pythoninterp \
+	    # this path may be different depending on the installing history. 
+            --with-python-config-dir=/usr/lib/python2.7/config \
             --enable-fail-if-missing \
-            --with-lua-prefix=/usr/include/lua5.1 \
             --enable-cscope
 	    
 make
